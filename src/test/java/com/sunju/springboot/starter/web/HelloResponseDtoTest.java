@@ -1,5 +1,6 @@
 package com.sunju.springboot.starter.web;
 
+import com.sunju.springboot.starter.web.dto.HelloResponseDto;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

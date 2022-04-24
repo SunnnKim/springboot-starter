@@ -1,4 +1,4 @@
-package com.sunju.springboot.starter.web;
+package com.sunju.springboot.starter.web.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

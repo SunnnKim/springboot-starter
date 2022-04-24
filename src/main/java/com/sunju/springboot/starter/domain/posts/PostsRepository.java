@@ -12,4 +12,6 @@ public interface PostsRepository extends JpaRepository<Posts, Long> {
      * - **** Entity 클래스와 같은 레벨에 위치해야 함! ****
      * -> 같은 도메인 패키지에서 관리하는 것이 중요함
      */
+
+
 }
