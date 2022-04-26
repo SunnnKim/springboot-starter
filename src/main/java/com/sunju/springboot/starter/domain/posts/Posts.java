@@ -1,5 +1,6 @@
 package com.sunju.springboot.starter.domain.posts;
 
+import com.sunju.springboot.starter.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Getter // ****Entity 클래스엔 Setter 생성하지 않느다
 @NoArgsConstructor
 @Entity // JPA Annotation
-public class Posts { // Entity Class
+public class Posts extends BaseTimeEntity { // Entity Class
 
     @Id // PK
     @GeneratedValue(strategy = GenerationType.IDENTITY)

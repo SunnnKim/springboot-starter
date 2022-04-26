@@ -2,6 +2,7 @@ package com.sunju.springboot.starter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 /**
  * @ SpringBootApplication
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * SpringBootApplication 어노테이션 위치부터 설정을 읽어가기 떄문에
  * 항상 프로젝트 최상단에 위치해야함
  */
+@EnableJpaAuditing // JPA Auditing 활성화
 @SpringBootApplication
 public class Application {
     public static void main(String[] args) {
