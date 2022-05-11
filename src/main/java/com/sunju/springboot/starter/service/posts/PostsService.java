@@ -44,4 +44,15 @@ public class PostsService {
                 .collect(Collectors.toList());
    }
 
+   @Transactional
+    public void delete(Long id){
+        // 존재하는 id인지 확인 후 삭제
+        // 존재하지 않는 경우 Exception 던지기
+        Posts posts = postsRepository.findById(id)
+                .orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
+
+        // JPA 기본제공
+        postsRepository.delete(posts);
+   }
+
 }
