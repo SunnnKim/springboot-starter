@@ -4,6 +4,21 @@
     <div class="row">
         <div class="col-md-6">
             <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+            {{#userName}}
+                Logged in as: <span id="user">{{userName}}</span>
+<!--
+ /logout : 스프링시큐리티에서 기본제공, Spring security 클래스에서 URL 변경가능
+
+   -->
+                <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+            {{/userName}}
+<!--
+ ^userName : userName 값이 앖는 경우 ( ^ : 부정형^)
+ /oauth2/authorization/google :  스프링시큐리티에서 기본제공하는 로그인 url
+-->
+            {{^userName}}
+                <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+            {{/userName}}
         </div>
     </div>
     <br>
