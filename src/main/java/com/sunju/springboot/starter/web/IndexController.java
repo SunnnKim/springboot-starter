@@ -1,5 +1,6 @@
 package com.sunju.springboot.starter.web;
 
+import com.sunju.springboot.starter.config.auth.LoginUser;
 import com.sunju.springboot.starter.config.auth.dto.SessionUser;
 import com.sunju.springboot.starter.service.posts.PostsService;
 import com.sunju.springboot.starter.web.dto.PostsResponseDto;
@@ -19,11 +20,11 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, @LoginUser SessionUser user){
 
         model.addAttribute("posts", postsService.findAllDesc());
-        // CustomOAuth2UserService 에서 로그인 성공 시 세션에 SessionUser 저장하도록 구성함
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        // CustomOAuth2UserService 에서 로그인 성공 시 세션에 SessionUser 저장하도록 구성 (어노테이션 방식으로 구현했기 떄문에 주석처리)
+//        SessionUser user = (SessionUser) httpSession.getAttribute("user");
 
         if(user != null){
             // 세션에 값이 있는 경우만 userName 등록
